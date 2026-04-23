@@ -1,0 +1,22 @@
+first = int(input("Введите первое чиселко: "))
+
+while True:
+    second = int(input("Введите второе чиселко: "))
+
+    if second <= first:
+        print("ЭЭЭ, введи другое второе число")
+        continue
+    else:
+        break
+
+while True:
+    third = int(input("Введите третье чиселко: "))
+
+    if third <= second:
+        print("Снова ошибся.. введи третье число еще раз")
+        continue
+    else:
+        break
+
+print("Так и быть теперь все верно!")
+print("твои чиселки: ", first, second, third) #в задании этого нет, но я захотела добавить вывод чисел пользователя
