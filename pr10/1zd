@@ -1,0 +1,8 @@
+while True:
+    pin = int(input("Введите пин код: "))
+    if pin == 4590:
+        print("Верно, захади")
+        break
+    else:
+        print("Ты дурак, не правильно!")
+        
