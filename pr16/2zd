@@ -4,7 +4,7 @@ incoming_input = input("Введите входящие ID через пробе
 allowed_set = set(allowed_input.split())
 incoming_set = set(incoming_input.split())
 
-for id_value in incoming_list:
+for id_value in incoming_set:
     if id_value in allowed_set:
         print("Oke")
     else:
