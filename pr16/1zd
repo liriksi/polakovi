@@ -1,0 +1,7 @@
+input_string = input("Введщите слова через пробел: ")
+
+word_list = input_string.split()
+unique_words = set(word_list)
+
+print(f"Количество: {len(unique_words)}")
+print("Слова:", " ".join(sorted(unique_words)))
