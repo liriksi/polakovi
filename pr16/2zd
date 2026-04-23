@@ -1,0 +1,12 @@
+allowed_input =  input("Введите разрешенные ID через пробел: ")
+incoming_input = input("Введите входящие ID через пробел: ")
+
+allowed_set = set(allowed_input.split())
+incoming_set = set(incoming_input.split())
+
+for id_value in incoming_list:
+    if id_value in allowed_set:
+        print("Oke")
+    else:
+        print("Added")
+        allowed_set.add(id_value)
