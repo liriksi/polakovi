@@ -1,0 +1,12 @@
+maximum = 0
+
+while True:
+    number = int(input("Вводи чиселко, захочешь стопнуть введи 0: "))
+    if number == 0:
+        break
+
+    if number > maximum:
+        maximum = number
+
+if maximum > 0:
+    print(maximum)
