@@ -1,0 +1,257 @@
+import turtle
+
+t = turtle.Turtle()
+t.speed(0)
+t.hideturtle()
+screen = turtle.Screen()
+screen.bgcolor("lightblue")
+screen.setup(width=800, height=700)
+
+#КОНСТАНТЫ
+#ОБЛАКО
+COLOR_CLOUD = "white"
+#СОЛНЦЕ
+SUN_RADIUS = 60
+COLOR_SON = "orange"
+CIRCLE_COLOR = "yellow"
+#НАДПИСЬ
+COLOR_TEXT1 = "purple"
+COLOR_TEXT2 = "deeppink"
+COLOR_TEXT3 = "blue"
+#СЕРДЦЕ
+COLOR_HEART = "red"
+#ТРАВА
+COLOR_GRASS = "green"
+#ЦВЕТОЧКИ
+COLOR_STEM = "darkgreen"
+COLOR_PETAL = "pink"
+CENTER_COLOR = "YELLOW"
+
+# =====================================================
+# ПАРА 2 — ОБЛАКО
+# =====================================================
+def cloud(x, y, radius):
+    t.color(COLOR_CLOUD)
+    coords = [
+        (115, 280, 40),
+        (85, 290, 30),
+        (145, 290, 30),
+        (65, 270, 25),
+        (165, 270, 25),
+        (115, 260, 35)
+        ]
+    cloud (115, 280, 90)
+    coords_1 = [
+        (-100, 180, -40),
+        (-70, 190, 30),
+        (-130, 190, 30),
+        (-50, 170, 25),
+        (-150, 170, 25),
+        (-100, 160, 35)
+        ]
+
+    coords_2 = [
+        (-270, 280, 40),
+        (-220, 290, 30),
+        (-310, 290, 30),
+        (-220, 270, 25),
+        (-320, 270, 25),
+        (-270, 260, 35)
+        ]
+
+    for x, y, radius in coords:
+        t.penup()
+        t.goto(a, b - r)
+        t.pendown()
+        t.begin_fill()
+        t.circle(r)
+        t.end_fill()
+
+    for x, y, radius in coords_1:
+        t.penup()
+        t.goto(a, b - r)
+        t.pendown()
+        t.begin_fill()
+        t.circle(r)
+        t.end_fill()
+
+    for x, y, radius in coords_2:
+        t.penup()
+        t.goto(a, b - r)
+        t.pendown()
+        t.begin_fill()
+        t.circle(r)
+        t.end_fill()
+
+
+# =====================================================
+# ПАРА 1 — СОЛНЫШКО
+# =====================================================
+
+t.color(COLOR_SON)
+t.width(6)
+for i in range(16):
+    t.penup()
+    t.goto(300, 250)
+    t.pendown()
+    t.setheading(i * 22.5)
+    t.forward(90)
+
+t.width(1)
+t.penup()
+t.goto(278, 195)
+t.pendown()
+t.color(CIRCLE_COLOR)
+t.begin_fill()
+t.circle(SUN_RADIUS)
+t.end_fill()
+
+# =====================================================
+# ПАРА 4 — СЕРДЕЧКО
+# =====================================================
+
+t.penup()
+t.goto(-270, 45)
+t.pendown()
+t.color(COLOR_HEART)
+t.begin_fill()
+t.setheading(140)
+t.forward(62)
+t.circle(-35, 200)
+t.setheading(60)
+t.circle(-35, 200)
+t.forward(62)
+t.end_fill()
+
+t.penup()
+t.goto(240, 45)
+t.pendown()
+t.color(COLOR_HEART)
+t.begin_fill()
+t.setheading(140)
+t.forward(62)
+t.circle(-35, 200)
+t.setheading(60)
+t.circle(-35, 200)
+t.forward(62)
+t.end_fill()
+
+t.penup()
+t.goto(0, 35)
+t.pendown()
+t.color(COLOR_TEXT1)
+t.write("С 8 Марта!", align="center", font=("Arial", 36, "bold"))
+t.penup()
+t.goto(0, 0)
+t.pendown()
+t.color(COLOR_TEXT2)
+t.write("Дорогие женщины!", align="center", font=("Arial", 20, "italic"))
+t.penup()
+t.goto(0, -35)
+t.pendown()
+t.color(COLOR_TEXT3)
+t.write("Пусть каждый день будет ярким!", align="center", font=("Arial", 14, "normal"))
+
+
+# =====================================================
+# ПАРА 5 — ТРАВА
+# =====================================================
+
+t.color(COLOR_GRASS)
+for i in range(33):
+    t.penup()
+    t.goto(-380 + i * 25, -342)
+    t.pendown()
+    d = 1 if i % 2 == 0 else -1
+    t.setheading(75 + (i % 5) * 10)
+    t.width(3 - (i % 2))
+    n = 70 + (i % 30)
+    for j in range(int(n / 10)):
+        t.forward(10)
+        t.left(5 * d)
+    t.width(1)
+
+
+# =====================================================
+# ПАРА 3 — ЦВЕТОК
+# =====================================================
+t.color(COLOR_STEM)
+t.width(4)
+t.penup()
+t.goto(0, -342)
+t.pendown()
+t.setheading(90)
+t.forward(120)
+t.width(1)
+t.color(COLOR_PETAL)
+for i in range(8):
+    t.penup()
+    t.goto(0, -180)
+    t.pendown()
+    t.setheading(i * 45)
+    t.begin_fill()
+    t.circle(30, 180)
+    t.circle(30, 180)
+    t.end_fill()
+t.penup()
+t.goto(-13, -190)
+t.pendown()
+t.color(CENTER_COLOR)
+t.begin_fill()
+t.circle(20)
+t.end_fill()
+
+
+t.color(COLOR_STEM)
+t.width(4)
+t.penup()
+t.goto(-250, -342)
+t.pendown()
+t.setheading(90)
+t.forward(120)
+t.width(1)
+t.color(COLOR_TEXT3)
+for i in range(8):
+    t.penup()
+    t.goto(-250, -180)
+    t.pendown()
+    t.setheading(i * 45)
+    t.begin_fill()
+    t.circle(30, 180)
+    t.circle(30, 180)
+    t.end_fill()
+t.penup()
+t.goto(-263, -190)
+t.pendown()
+t.color(CENTER_COLOR)
+t.begin_fill()
+t.circle(20)
+t.end_fill()
+
+t.color(COLOR_STEM)
+t.width(4)
+t.penup()
+t.goto(250, -342)
+t.pendown()
+t.setheading(90)
+t.forward(120)
+t.width(1)
+t.color(COLOR_TEXT1)
+for i in range(8):
+    t.penup()
+    t.goto(250, -180)
+    t.pendown()
+    t.setheading(i * 45)
+    t.begin_fill()
+    t.circle(30, 180)
+    t.circle(30, 180)
+    t.end_fill()
+t.penup()
+t.goto(238, -190)
+t.pendown()
+t.color(CENTER_COLOR)
+t.begin_fill()
+t.circle(20)
+t.end_fill()
+
+turtle.done()
