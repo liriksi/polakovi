@@ -1,1 +1,6 @@
+def convert_to_miles(kmm):
 
+    return kmm * 0.6214
+
+miles = convert_to_miles(float(input("Введите километры: ")))
+print("Переведено в мили: ", miles)
