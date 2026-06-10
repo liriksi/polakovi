@@ -1,0 +1,17 @@
+log1_input = input("Лог 1: ").strip()
+log2_input = input("Лог 2: ").strip()
+log3_input = input("Лог 3: ").strip()
+
+set1 = set(log1_input.split())
+set2 = set(log2_input.split())
+set3 = set(log3_input.split())
+
+in_all = set1 & set2 & set3
+
+# Объединение всех IP
+all_ips = set1 | set2 | set3
+
+# IP, которые не во всех трёх
+result = all_ips - in_all
+
+print(" ".join(sorted(result, key=lambda x: [int(part) for part in x.split('.')])))
