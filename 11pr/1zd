@@ -1,0 +1,14 @@
+print("Задача 1. Решения уравнения 28n + 30k + 31m = 365:")
+
+solutions = []
+
+for n in range(1, 365 // 28 + 1):
+    for k in range(1, 365 // 30 + 1):
+        for m in range(1, 365 // 31 + 1):
+            if 28 * n + 30 * k + 31 * m == 365:
+                solutions.append((n, k, m))
+
+solutions.sort(key=lambda x: x[0])
+
+for sol in solutions:
+    print(f"n = {sol[0]}, k = {sol[1]}, m = {sol[2]}")
