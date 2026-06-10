@@ -1,0 +1,13 @@
+allowed_input = input("Разрешённые ID: ").strip()
+incoming_input = input("Входящие ID: ").strip()
+
+allowed_set = set(allowed_input.split())
+incoming_list = incoming_input.split()
+
+for user_id in incoming_list:
+    if user_id in allowed_set:
+        print("OK")
+    else:
+        print("ADDED")
+        allowed_set.add(user_id)
+        
