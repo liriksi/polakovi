@@ -1,0 +1,11 @@
+server_a_input = input("Сервер A: ").strip()
+server_b_input = input("Сервер B: ").strip()
+
+set_a = set(server_a_input.split())
+set_b = set(server_b_input.split())
+
+common = set_a & set_b
+lost = set_a - set_b
+
+print("Общие:", " ".join(sorted(common)))
+print("Потерянные:", " ".join(sorted(lost)))
