@@ -1,0 +1,13 @@
+import random
+
+numbers = [random.randint(1, 100) for _ in range(5)]
+print(f"Исходный список: {numbers}")
+
+min_index = 0
+for i in range(1, len(numbers)):
+    if numbers[i] < numbers[min_index]:
+        min_index = i
+
+numbers[0], numbers[min_index] = numbers[min_index], numbers[0]
+
+print(f"После обмена: {numbers}")
