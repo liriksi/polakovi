@@ -1,0 +1,11 @@
+cia_input = input("ЦРУ: ").strip()
+mi6_input = input("МИ-6: ").strip()
+kgb_input = input("КГБ: ").strip()
+
+cia_set = set(cia_input.split())
+mi6_set = set(mi6_input.split())
+kgb_set = set(kgb_input.split())
+
+double_agents = (cia_set & mi6_set) - kgb_set
+
+print(" ".join(sorted(double_agents, reverse=True)))
