@@ -1,0 +1,39 @@
+num = input("Введите натуральное число: ")
+
+if not num.isdigit():
+    print("Ошибка ввода")
+else:
+    digits = [int(ch) for ch in num]
+    last_digit = digits[-1]
+
+
+    count_3 = digits.count(3)
+
+    count_last = digits.count(last_digit)
+
+
+    count_even = sum(1 for d in digits if d % 2 == 0)
+
+
+    sum_gt5 = sum(d for d in digits if d > 5)
+
+
+    prod_gt7 = 1
+    has_gt7 = False
+    for d in digits:
+        if d > 7:
+            prod_gt7 *= d
+            has_gt7 = True
+    if not has_gt7:
+        prod_gt7 = 1
+
+
+    count_0_and_5 = digits.count(0) + digits.count(5)
+
+
+    print(count_3)
+    print(count_last)
+    print(count_even)
+    print(sum_gt5)
+    print(prod_gt7)
+    print(count_0_and_5)
